@@ -12,7 +12,7 @@ public class WeatherData {
     statisticsDisplay = new StatisticsDisplay();
   }
 
-  public void measurementsChanged() {
+  public void measurementsChanged(float temperature, float humidity, float pressure) {
     currentConditionsDisplay.update(temperature, humidity, pressure);
     statisticsDisplay.update(temperature, humidity, pressure);
   }
@@ -21,7 +21,7 @@ public class WeatherData {
     this.temperature = temperature;
     this.humidity = humidity;
     this.pressure = pressure;
-    measurementsChanged();
+    measurementsChanged(temperature, humidity, pressure);
   }
 
   public float getTemperature() {
